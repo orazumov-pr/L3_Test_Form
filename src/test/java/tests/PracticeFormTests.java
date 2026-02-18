@@ -1,12 +1,16 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+
+import java.time.Duration;
+
 
 public class PracticeFormTests {
 
@@ -22,8 +26,12 @@ public class PracticeFormTests {
     void fillFormTest() {
         open("/");
 
-        // Навигация
-        $(byText("Forms")).ancestor(".card-body").click();
+        // Не ждем исчезновения рекламы, а сразу кликаем через JavaScript
+        SelenideElement formsElement = $(byText("Forms"));
+        formsElement.shouldBe(visible, Duration.ofSeconds(10));
+        executeJavaScript("arguments[0].click();", formsElement);
+
+        // Переход к форме
         $$(".router-link").findBy(text("Practice Form")).click();
 
         // Заполнение формы
