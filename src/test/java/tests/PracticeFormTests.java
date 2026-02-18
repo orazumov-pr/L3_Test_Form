@@ -23,7 +23,7 @@ public class PracticeFormTests {
         open("/");
 
         // Навигация
-        $(".card-body").find(byText("Forms")).click();
+        $(byText("Forms")).ancestor(".card-body").click();
         $$(".router-link").findBy(text("Practice Form")).click();
 
         // Заполнение формы
