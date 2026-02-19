@@ -32,7 +32,7 @@ public class PracticeFormAutotest {
 
         // Заполнение формы
 
-        $("#firstName").shouldBe(visible).setValue("Oleg");
+        $("#firstName").setValue("Oleg");
         $("#lastName").setValue("Razumov");
         $("#userEmail").setValue("razumov@mail.ru");
         $("#genterWrapper").$(byText("Male")).click();
@@ -46,13 +46,11 @@ public class PracticeFormAutotest {
         $(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
         $("#currentAddress").setValue("Ulitsa Lenina, 5");
-        $("#state").scrollTo().click();
+        $("#state").click();
         $(byText("Uttar Pradesh")).click();
         $("#city").click();
         $(byText("Merrut")).click();
-
-
-        $("#submit").scrollTo().click();
+        $("#submit").click();
 
         // Проверки
         $(".modal-content").shouldBe(visible);
