@@ -48,25 +48,25 @@ public class PracticeFormTestData {
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
         $("#currentAddress").setValue(address);
         $("#state").click();
-        $(byText("Uttar Pradesh")).click();
+        $(byText(state)).click();
         $("#city").click();
-        $(byText("Merrut")).click();
+        $(byText(city)).click();
         $("#submit").click();
 
         // Проверки
         $(".modal-content").shouldBe(visible);
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
 
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Oleg Razumov"));
-        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("razumov@mail.ru"));
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName + " " + lastName));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(userEmail));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("9997776655"));
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("14 January,1977"));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
-        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(daySelect + " " + monthSelect + " " + yearSelect));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subjectsInput));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(hobbieInput));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("my_abstract_scr.jpg"));
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Ulitsa Lenina, 5"));
-        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Merrut"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(address));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text(state + " " + city));
 
     }
 }

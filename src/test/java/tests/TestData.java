@@ -12,6 +12,8 @@ public class TestData {
     public static String subjectsInput ="En";
     public static String hobbieInput ="Music";
     public static String address ="Ulitsa Lenina, 5";
+    public static String state ="Uttar Pradesh";
+    public static String city ="Merrut";
 
 
 }
