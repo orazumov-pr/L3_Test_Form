@@ -37,17 +37,16 @@ public class PracticeFormTestData {
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
-        $("#genterWrapper").$(byText(genterWrapper)).click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue(userNumber);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(monthSelect);
         $(".react-datepicker__year-select").selectOption(yearSelect);
-        $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)")
-                .shouldBe(visible).click();
-        $("#subjectsInput").setValue("En").pressEnter();
-        $(byText("Music")).click();
+        $(".react-datepicker__day.react-datepicker__day--0" + daySelect).click();
+        $("#subjectsInput").setValue(subjectsInput).pressEnter();
+        $(byText(hobbieInput)).click();
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
-        $("#currentAddress").setValue("Ulitsa Lenina, 5");
+        $("#currentAddress").setValue(address);
         $("#state").click();
         $(byText("Uttar Pradesh")).click();
         $("#city").click();
