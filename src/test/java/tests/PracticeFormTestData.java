@@ -37,7 +37,7 @@ public class PracticeFormTestData {
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
-        $("#genterWrapper").$(byText("Male")).click();
+        $("#gender-radio-1").parent().click();
         $("#userNumber").setValue(userNumber);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(monthSelect);
@@ -59,9 +59,9 @@ public class PracticeFormTestData {
 
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName + " " + lastName));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(userEmail));
-        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text(gender));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text(userNumber));
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(daySelect + " " + monthSelect + " " + yearSelect));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(daySelect + " " + monthSelect + "," + yearSelect));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subjectsInput));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(hobbieInput));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("my_abstract_scr.jpg"));
