@@ -1,7 +1,5 @@
 package tests;
 
-package tests;
-
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,10 +8,12 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static tests.TestData.*;
 
 import java.time.Duration;
 
 public class PracticeFormTestData {
+
 
     @BeforeAll
     static void setUp() {
@@ -34,14 +34,14 @@ public class PracticeFormTestData {
 
         // Заполнение формы
 
-        $("#firstName").setValue("Oleg");
-        $("#lastName").setValue("Razumov");
-        $("#userEmail").setValue("razumov@mail.ru");
-        $("#genterWrapper").$(byText("Male")).click();
-        $("#userNumber").setValue("9997776655");
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userEmail").setValue(userEmail);
+        $("#genterWrapper").$(byText(genterWrapper)).click();
+        $("#userNumber").setValue(userNumber);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("January");
-        $(".react-datepicker__year-select").selectOption("1977");
+        $(".react-datepicker__month-select").selectOption(monthSelect);
+        $(".react-datepicker__year-select").selectOption(yearSelect);
         $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)")
                 .shouldBe(visible).click();
         $("#subjectsInput").setValue("En").pressEnter();
