@@ -35,7 +35,7 @@ public class PracticeFormAutotest {
         $("#firstName").setValue("Oleg");
         $("#lastName").setValue("Razumov");
         $("#userEmail").setValue("razumov@mail.ru");
-        $("#genterWrapper").$(byText("Male")).click();
+        $("#gender-radio-1").parent().click();
         $("#userNumber").setValue("9997776655");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("January");
