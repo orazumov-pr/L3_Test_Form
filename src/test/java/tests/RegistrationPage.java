@@ -15,7 +15,7 @@ public class RegistrationPage {
     //Elements
     private SelenideElement firstNameInput =  $("#firstName");
     private SelenideElement lastNameInput =  $("#lastName");
-    private SelenideElement lastNameInput =  $("#lastName");
+
 
     //Actions
     public RegistrationPage openPage() {
