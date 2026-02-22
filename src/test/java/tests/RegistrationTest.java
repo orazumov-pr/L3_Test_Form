@@ -30,7 +30,7 @@ public class RegistrationTest extends TestData {
         registrationPage.typeEmail("razumov@mail.ru");
         registrationPage.setGender("Male");
         registrationPage.typeNumber("9997776655");
- //       registrationPage.setDateOfBirth("", "", "");
+        registrationPage.setDateOfBirth("14", "January", "1977");
 
 
 
@@ -50,7 +50,6 @@ public class RegistrationTest extends TestData {
         $(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
 
-        $("#currentAddress").setValue("Ulitsa Lenina, 5");
 
         $("#state").click();
         $(byText("Uttar Pradesh")).click();

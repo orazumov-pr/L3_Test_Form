@@ -1,5 +1,6 @@
 package Pages;
 
+import Pages.components.CalendarComponent;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
@@ -12,6 +13,8 @@ import java.time.Duration;
 
 public class RegistrationPage {
 
+    CalendarComponent calendar = new CalendarComponent();
+
     //Elements
     private SelenideElement firstNameInput =  $("#firstName");
     private SelenideElement lastNameInput =  $("#lastName");
@@ -19,6 +22,8 @@ public class RegistrationPage {
     private SelenideElement genderContainer =  $("#gender-radio-1");
 //    private SelenideElement genderContainer =  $("#genterWrapper);
     private SelenideElement numberInput =  $("#userNumber");
+
+
 
 
 
@@ -69,6 +74,14 @@ public class RegistrationPage {
 
    public RegistrationPage typeNumber(String value) {
         numberInput.setValue(value);
+
+        return this;
+    }
+
+    public RegistrationPage setDateOfBirth(String day, String month, String year) {
+        $("#dateOfBirthInput").click();
+
+        calendar.setDate(day, month, year);
 
         return this;
     }
