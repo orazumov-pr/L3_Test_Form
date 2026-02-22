@@ -34,22 +34,10 @@ public class RegistrationTest extends TestData {
         registrationPage.setSubjects("En");
         registrationPage.setHobbies("Music");
         registrationPage.loadPicture("my_abstract_scr.jpg");
-
-
         registrationPage.typeAddress("Ulitsa Lenina, 5");
+        registrationPage.setStateAndCity("Uttar Pradesh", "Merrut");
+        registrationPage.submitForm();
 
-
-        // Заполнение формы
-
-
-        $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
-
-
-        $("#state").click();
-        $(byText("Uttar Pradesh")).click();
-        $("#city").click();
-        $(byText("Merrut")).click();
-        $("#submit").click();
 
         // Проверки
         $(".modal-content").shouldBe(visible);

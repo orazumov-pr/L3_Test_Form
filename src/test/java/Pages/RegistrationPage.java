@@ -21,19 +21,26 @@ public class RegistrationPage {
     private SelenideElement emailInput =  $("#userEmail");
     private SelenideElement genderContainer =  $("#gender-radio-1");
 //    private SelenideElement genderContainer =  $("#genterWrapper);
+    private SelenideElement numberInput =  $("#userNumber");
     private SelenideElement subjectContainer =  $("#subjectsInput");
     private SelenideElement hobbiesContainer =  $("#hobbiesWrapper");
     private SelenideElement pictureUpload =  $("#uploadPicture");
-    private SelenideElement numberInput =  $("#userNumber");
-
-
-
-
-
-
-
-
     private SelenideElement addressInput =  $("#currentAddress");
+    private SelenideElement stateCityContainer =  $("#stateCity-wrapper");
+    private SelenideElement setState =  $("#state");
+    private SelenideElement setCity =  $("#city");
+    private SelenideElement submitButton =  $("#submit");
+
+
+
+
+
+
+
+
+
+
+
 
     //Actions
     public RegistrationPage openPage() {
@@ -113,7 +120,32 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage setState(String value) {
+        setState.click();
+        stateCityContainer.$(byText(value)).click();
 
+        return this;
+    }
+
+    public RegistrationPage setCity(String value) {
+        setCity.click();
+        stateCityContainer.$(byText(value)).click();
+
+        return this;
+    }
+
+    public RegistrationPage setStateAndCity(String state, String city) {
+        setState(state);
+        setCity(city);
+
+        return this;
+    }
+
+    public RegistrationPage submitForm() {
+        submitButton.click();
+
+        return this;
+    }
 
 
 
