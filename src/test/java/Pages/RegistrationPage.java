@@ -19,8 +19,7 @@ public class RegistrationPage {
     private SelenideElement firstNameInput =  $("#firstName");
     private SelenideElement lastNameInput =  $("#lastName");
     private SelenideElement emailInput =  $("#userEmail");
-    private SelenideElement genderContainer =  $("#gender-radio-1");
-//    private SelenideElement genderContainer =  $("#genterWrapper);
+    private SelenideElement genderContainer =  $("#genterWrapper");
     private SelenideElement numberInput =  $("#userNumber");
     private SelenideElement subjectContainer =  $("#subjectsInput");
     private SelenideElement hobbiesContainer =  $("#hobbiesWrapper");
@@ -31,15 +30,8 @@ public class RegistrationPage {
     private SelenideElement setCity =  $("#city");
     private SelenideElement submitButton =  $("#submit");
 
-
-
-
-
-
-
-
-
-
+    private SelenideElement summaryForm = $((".modal-header"));
+    private SelenideElement responsiveTable = $((".table-responsive"));
 
 
     //Actions
@@ -70,17 +62,17 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setGender(String value) {
-        genderContainer.parent().click();
-
-        return this;
-    }
-
-//        public RegistrationPage setGender(String value) {
-//        genderContainer.$byText(value).click();
+//    public RegistrationPage setGender(String value) {
+//        genderContainer.parent().click();
 //
 //        return this;
 //    }
+
+        public RegistrationPage setGender(String value) {
+        genderContainer.$(byText(value)).click();
+
+        return this;
+    }
 
    public RegistrationPage typeNumber(String value) {
         numberInput.setValue(value);
@@ -147,6 +139,17 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage checkSummaryForm(String value){
+        summaryForm.shouldBe(text(value));
+        return this;
+    }
+
+    public void checkField(String key, String value) {
+        responsiveTable
+                .$(byText(key))
+                .parent()
+                .shouldHave(text(value));
+    }
 
 
 }
