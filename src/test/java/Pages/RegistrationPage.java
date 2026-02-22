@@ -21,6 +21,9 @@ public class RegistrationPage {
     private SelenideElement emailInput =  $("#userEmail");
     private SelenideElement genderContainer =  $("#gender-radio-1");
 //    private SelenideElement genderContainer =  $("#genterWrapper);
+    private SelenideElement subjectContainer =  $("#subjectsInput");
+    private SelenideElement hobbiesContainer =  $("#hobbiesWrapper");
+    private SelenideElement pictureUpload =  $("#uploadPicture");
     private SelenideElement numberInput =  $("#userNumber");
 
 
@@ -86,12 +89,26 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage setSubjects(String value) {
+        subjectContainer.setValue(value).pressEnter();
 
+        return this;
+    }
 
+    public RegistrationPage setHobbies(String value) {
+        hobbiesContainer.$(byText(value)).click();
 
+        return this;
+    }
 
     public RegistrationPage typeAddress(String value) {
         addressInput.setValue(value);
+
+        return this;
+    }
+
+    public RegistrationPage loadPicture(String value) {
+        pictureUpload.uploadFromClasspath(value);
 
         return this;
     }

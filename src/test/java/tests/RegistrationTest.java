@@ -31,7 +31,9 @@ public class RegistrationTest extends TestData {
         registrationPage.setGender("Male");
         registrationPage.typeNumber("9997776655");
         registrationPage.setDateOfBirth("14", "January", "1977");
-
+        registrationPage.setSubjects("En");
+        registrationPage.setHobbies("Music");
+        registrationPage.loadPicture("my_abstract_scr.jpg");
 
 
         registrationPage.typeAddress("Ulitsa Lenina, 5");
@@ -40,14 +42,6 @@ public class RegistrationTest extends TestData {
         // Заполнение формы
 
 
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("January");
-        $(".react-datepicker__year-select").selectOption("1977");
-        $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)")
-                .shouldBe(visible).click();
-
-        $("#subjectsInput").setValue("En").pressEnter();
-        $(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
 
 
