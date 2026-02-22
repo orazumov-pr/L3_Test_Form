@@ -1,4 +1,4 @@
-package tests;
+package Pages;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -15,7 +15,17 @@ public class RegistrationPage {
     //Elements
     private SelenideElement firstNameInput =  $("#firstName");
     private SelenideElement lastNameInput =  $("#lastName");
+    private SelenideElement emailInput =  $("#userEmail");
+    private SelenideElement genderContainer =  $("#gender-radio-1");
+//    private SelenideElement genderContainer =  $("#genterWrapper);
+    private SelenideElement numberInput =  $("#userNumber");
 
+
+
+
+
+
+    private SelenideElement addressInput =  $("#currentAddress");
 
     //Actions
     public RegistrationPage openPage() {
@@ -35,6 +45,40 @@ public class RegistrationPage {
 
     public RegistrationPage typeLastName(String value) {
         lastNameInput.setValue(value);
+
+        return this;
+    }
+
+    public RegistrationPage typeEmail(String value) {
+        emailInput.setValue(value);
+
+        return this;
+    }
+
+    public RegistrationPage setGender(String value) {
+        genderContainer.parent().click();
+
+        return this;
+    }
+
+//        public RegistrationPage setGender(String value) {
+//        genderContainer.$byText(value).click();
+//
+//        return this;
+//    }
+
+   public RegistrationPage typeNumber(String value) {
+        numberInput.setValue(value);
+
+        return this;
+    }
+
+
+
+
+
+    public RegistrationPage typeAddress(String value) {
+        addressInput.setValue(value);
 
         return this;
     }

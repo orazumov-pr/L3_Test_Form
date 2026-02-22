@@ -1,15 +1,13 @@
 package tests;
 
+import Pages.RegistrationPage;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
-import java.time.Duration;
 
 public class RegistrationTest extends TestData {
     RegistrationPage registrationPage = new RegistrationPage();
@@ -28,24 +26,32 @@ public class RegistrationTest extends TestData {
     void sucessfulRegistrationTest() {
         registrationPage.openPage();
         registrationPage.typeFirstName("Oleg");
+        registrationPage.typeLastName("Razumov");
+        registrationPage.typeEmail("razumov@mail.ru");
+        registrationPage.setGender("Male");
+        registrationPage.typeNumber("9997776655");
+        registrationPage.setDateOfBirth("", "", "");
+
+
+
+        registrationPage.typeAddress("Ulitsa Lenina, 5");
 
 
         // Заполнение формы
 
-        $("#firstName").setValue("Oleg");
-        $("#lastName").setValue("Razumov");
-        $("#userEmail").setValue("razumov@mail.ru");
-        $("#gender-radio-1").parent().click();
-        $("#userNumber").setValue("9997776655");
+
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("January");
         $(".react-datepicker__year-select").selectOption("1977");
         $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)")
                 .shouldBe(visible).click();
+
         $("#subjectsInput").setValue("En").pressEnter();
         $(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
+
         $("#currentAddress").setValue("Ulitsa Lenina, 5");
+
         $("#state").click();
         $(byText("Uttar Pradesh")).click();
         $("#city").click();
