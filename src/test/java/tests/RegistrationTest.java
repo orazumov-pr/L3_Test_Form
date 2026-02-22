@@ -30,7 +30,7 @@ public class RegistrationTest extends TestData {
         registrationPage.typeEmail("razumov@mail.ru");
         registrationPage.setGender("Male");
         registrationPage.typeNumber("9997776655");
-        registrationPage.setDateOfBirth("", "", "");
+ //       registrationPage.setDateOfBirth("", "", "");
 
 
 
