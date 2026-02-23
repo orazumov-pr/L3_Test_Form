@@ -154,6 +154,4 @@ public class RegistrationPage {
                 .shouldHave(text(value));
     }
 
-
-
 }
