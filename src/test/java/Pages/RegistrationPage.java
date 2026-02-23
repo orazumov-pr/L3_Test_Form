@@ -36,12 +36,13 @@ public class RegistrationPage {
 
     //Actions
     public RegistrationPage openPage() {
-            SelenideElement formsElement = $(byText("Forms"));
-            formsElement.shouldBe(visible, Duration.ofSeconds(10));
-            executeJavaScript("arguments[0].click();", formsElement);
-            $$(".router-link").findBy(text("Practice Form")).click();
+        open("/");
+        SelenideElement formsElement = $(byText("Forms"));
+        formsElement.shouldBe(visible, Duration.ofSeconds(10));
+        executeJavaScript("arguments[0].click();", formsElement);
+        $$(".router-link").findBy(text("Practice Form")).click();
 
-            return this;
+        return this;
     }
 
     public RegistrationPage typeFirstName(String value) {
@@ -62,13 +63,7 @@ public class RegistrationPage {
         return this;
     }
 
-//    public RegistrationPage setGender(String value) {
-//        genderContainer.parent().click();
-//
-//        return this;
-//    }
-
-        public RegistrationPage setGender(String value) {
+    public RegistrationPage setGender(String value) {
         genderContainer.$(byText(value)).click();
 
         return this;
@@ -150,6 +145,7 @@ public class RegistrationPage {
                 .parent()
                 .shouldHave(text(value));
     }
+
 
 
 }

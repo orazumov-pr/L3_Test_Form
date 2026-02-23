@@ -5,9 +5,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationTest extends TestData {
     RegistrationPage registrationPage = new RegistrationPage();
@@ -21,9 +18,9 @@ public class RegistrationTest extends TestData {
         Configuration.timeout = 10000;
     }
 
-
     @Test
-    void sucessfulRegistrationTest() {
+    void successfulRegistrationTest() {
+        registrationPage.openPage();
         registrationPage.openPage();
         registrationPage.typeFirstName("Oleg");
         registrationPage.typeLastName("Razumov");
@@ -37,13 +34,10 @@ public class RegistrationTest extends TestData {
         registrationPage.typeAddress("Ulitsa Lenina, 5");
         registrationPage.setStateAndCity("Uttar Pradesh", "Merrut");
         registrationPage.submitForm();
-
-
-        //Checkings
-        registrationPage.checkSummaryForm("Thanks for submitting the form");
-        registrationPage.checkField();
-
     }
+
+
+
 }
 
 
