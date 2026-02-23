@@ -64,7 +64,7 @@ public class PracticeFormTestData {
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text(daySelect + " " + monthSelect + "," + yearSelect));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subjectsInput));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(hobbieInput));
-        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("my_abstract_scr.jpg"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text(namePicture));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text(address));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text(state + " " + city));
 
