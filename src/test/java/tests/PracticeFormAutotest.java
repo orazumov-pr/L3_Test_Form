@@ -40,8 +40,7 @@ public class PracticeFormAutotest {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("January");
         $(".react-datepicker__year-select").selectOption("1977");
-        $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)")
-                .shouldBe(visible).click();
+        $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)").shouldBe(visible).click();
         $("#subjectsInput").setValue("En").pressEnter();
         $(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
