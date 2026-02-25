@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Pages.components.CalendarComponent;
+import pages.components.CalendarComponent;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
@@ -16,19 +16,19 @@ public class RegistrationPage {
     CalendarComponent calendar = new CalendarComponent();
 
     //Elements
-    private SelenideElement firstNameInput =  $("#firstName");
-    private SelenideElement lastNameInput =  $("#lastName");
-    private SelenideElement emailInput =  $("#userEmail");
-    private SelenideElement genderContainer =  $("#genterWrapper");
-    private SelenideElement numberInput =  $("#userNumber");
-    private SelenideElement subjectContainer =  $("#subjectsInput");
-    private SelenideElement hobbiesContainer =  $("#hobbiesWrapper");
-    private SelenideElement pictureUpload =  $("#uploadPicture");
-    private SelenideElement addressInput =  $("#currentAddress");
-    private SelenideElement stateCityContainer =  $("#stateCity-wrapper");
-    private SelenideElement setState =  $("#state");
-    private SelenideElement setCity =  $("#city");
-    private SelenideElement submitButton =  $("#submit");
+    private SelenideElement firstNameInput = $("#firstName");
+    private SelenideElement lastNameInput = $("#lastName");
+    private SelenideElement emailInput = $("#userEmail");
+    private SelenideElement genderContainer = $("#genterWrapper");
+    private SelenideElement numberInput = $("#userNumber");
+    private SelenideElement subjectContainer = $("#subjectsInput");
+    private SelenideElement hobbiesContainer = $("#hobbiesWrapper");
+    private SelenideElement pictureUpload = $("#uploadPicture");
+    private SelenideElement addressInput = $("#currentAddress");
+    private SelenideElement stateCityContainer = $("#stateCity-wrapper");
+    private SelenideElement setState = $("#state");
+    private SelenideElement setCity = $("#city");
+    private SelenideElement submitButton = $("#submit");
 
     private SelenideElement summaryForm = $(".modal-content");
     private SelenideElement summaryFormHeader = $(".modal-header");
@@ -70,7 +70,7 @@ public class RegistrationPage {
         return this;
     }
 
-   public RegistrationPage typeNumber(String value) {
+    public RegistrationPage typeNumber(String value) {
         numberInput.setValue(value);
 
         return this;
@@ -135,7 +135,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage modalContent(){
+    public RegistrationPage modalContent() {
         summaryForm.shouldBe(visible);
 
         return this;
