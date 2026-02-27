@@ -1,4 +1,4 @@
-package tests;
+package tests.testdata;
 
 import pages.RegistrationPage;
 import com.codeborne.selenide.Configuration;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.components.ResultTableData;
 
-import static tests.TestData.*;
+import static tests.testdata.TestData.*;
 
 
 public class RegistrationTest {
@@ -24,6 +24,7 @@ public class RegistrationTest {
 
     @Test
     void successfulRegistrationTest() {
+
         registrationPage.openPage()
                 .typeFirstName(firstName)
                 .typeLastName(lastName)
