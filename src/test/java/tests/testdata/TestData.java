@@ -1,4 +1,4 @@
-package tests;
+package tests.testdata;
 
 public class TestData {
     public static String firstName = "Oleg";
