@@ -29,7 +29,7 @@ public class PracticeFormTestData {
 
         SelenideElement formsElement = $(byText("Forms"));
         formsElement.shouldBe(visible, Duration.ofSeconds(10));
-        formsElement.click();
+        executeJavaScript("arguments[0].click();", formsElement);
         $$(".router-link").findBy(text("Practice Form")).click();
 
         // Заполнение формы

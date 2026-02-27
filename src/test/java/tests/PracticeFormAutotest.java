@@ -23,11 +23,11 @@ public class PracticeFormAutotest {
 
     @Test
     void fillFormTest() {
-        open("/");
+        open("");
 
         SelenideElement formsElement = $(byText("Forms"));
         formsElement.shouldBe(visible, Duration.ofSeconds(10));
-        formsElement.click();
+        executeJavaScript("arguments[0].click();", formsElement);
         $$(".router-link").findBy(text("Practice Form")).click();
 
         // Заполнение формы
