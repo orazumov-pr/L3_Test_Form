@@ -30,10 +30,6 @@ public class RegistrationPage {
     private SelenideElement setCity =  $("#city");
     private SelenideElement submitButton =  $("#submit");
 
-    private SelenideElement summaryForm = $(".modal-content");
-    private SelenideElement summaryFormHeader = $(".modal-header");
-    private SelenideElement responsiveTable = $((".table-responsive"));
-
 
     //Actions
     public RegistrationPage openPage() {
@@ -134,24 +130,4 @@ public class RegistrationPage {
 
         return this;
     }
-
-    public RegistrationPage modalContent(){
-        summaryForm.shouldBe(visible);
-
-        return this;
-    }
-
-    public RegistrationPage modalHeader(String value) {
-        summaryFormHeader.shouldHave(text(value));
-
-        return this;
-    }
-
-    public void checkField(String key, String value) {
-        responsiveTable
-                .$(byText(key))
-                .parent()
-                .shouldHave(text(value));
-    }
-
 }
