@@ -25,7 +25,7 @@ public class PracticeFormTestData {
 
     @Test
     void fillFormTest() {
-        open("/");
+        open("");
 
         SelenideElement formsElement = $(byText("Forms"));
         formsElement.shouldBe(visible, Duration.ofSeconds(10));
