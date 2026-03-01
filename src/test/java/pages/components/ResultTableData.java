@@ -4,14 +4,14 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static tests.testdata.TestData.*;
+
 
 public class ResultTableData {
 
     private SelenideElement modalContent = $(".modal-content");
     private SelenideElement modalHeader = $(".modal-header");
-    private SelenideElement tableResponsive = $(".table-responsive");
 
     public ResultTableData checkModalContent() {
         modalContent.shouldBe(visible);
@@ -24,25 +24,11 @@ public class ResultTableData {
     }
 
     public ResultTableData checkField(String fieldName, String expectedValue) {
-        tableResponsive.shouldHave(text(fieldName + " " + expectedValue));
+        $(".table-responsive")
+                .$(byText(fieldName))
+                .parent()
+                .shouldHave(text(expectedValue));
         return this;
     }
 
-    public ResultTableData checkAllFields() {
-        checkModalContent();
-        checkModalHeader("Thanks for submitting the form");
-
-        checkField("Student Name", firstName + " " + lastName);
-        checkField("Student Email", userEmail);
-        checkField("Gender", gender);
-        checkField("Mobile", userNumber);
-        checkField("Date of Birth", daySelect + " " + monthSelect + "," + yearSelect);
-        checkField("Subjects", "English");
-        checkField("Hobbies", hobbieInput);
-        checkField("Picture", namePicture);
-        checkField("Address", address);
-        checkField("State and City", state + " " + city);
-
-        return this;
-    }
 }

@@ -39,7 +39,19 @@ public class RegistrationTest {
                 .setStateAndCity(state, city)
                 .submitForm();
 
-        resultTableData.checkAllFields();
+        resultTableData.checkModalContent()
+                .checkModalHeader("Thanks for submitting the form")
+                .checkField("Student Name", firstName + " " + lastName)
+                .checkField("Student Email", userEmail)
+                .checkField("Gender", gender)
+                .checkField("Mobile", userNumber)
+                .checkField("Date of Birth", daySelect + " " + monthSelect + "," + yearSelect)
+                .checkField("Subjects", "English")
+                .checkField("Hobbies", hobbieInput)
+                .checkField("Picture", namePicture)
+                .checkField("Address", address)
+                .checkField("State and City", state + " " + city);
+
     }
 }
 
