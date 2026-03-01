@@ -26,10 +26,14 @@ public class PracticeFormTestData {
     @Test
     void fillFormTest() {
         open("");
+        executeJavaScript("""
+        document.getElementById('fixedban')?.remove();
+        document.querySelector('footer')?.remove();
+        """);
 
         SelenideElement formsElement = $(byText("Forms"));
         formsElement.shouldBe(visible, Duration.ofSeconds(10));
-        executeJavaScript("arguments[0].click();", formsElement);
+        formsElement.click();
         $$(".router-link").findBy(text("Practice Form")).click();
 
         // Заполнение формы
