@@ -13,8 +13,8 @@ public class RandomValues {
             subjectsInput = faker.options().option("English", "Chemistry", "Computer Science",
                     "Commerce", "Economics", "Civics"),
 
-    userNumber = faker.phoneNumber().subscriberNumber(10),
-            yearSelect = String.format("%s",faker.number().numberBetween(1900,2100)),
+            userNumber = faker.phoneNumber().subscriberNumber(10),
+            yearSelect = String.format("%s",faker.number().numberBetween(1926,2026)),
             monthSelect = faker.options().option("January", "February", "March", "April",
                     "May", "June", "July", "August", "September", "October", "November", "December"),
             daySelect = String.format("%s",faker.number().numberBetween(10, 28)),
@@ -24,7 +24,6 @@ public class RandomValues {
             state = faker.options().option("NCR", "Haryana", "Rajasthan"),
             city = selectCity(state);
 
-    public String pictureName = "my_abstract_scr.jpg";
 
     public String selectCity(String state) {
         return switch (state) {
