@@ -1,4 +1,4 @@
-package tests;
+package tests.testdata;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static tests.TestData.*;
+import static tests.testdata.TestData.*;
 
 import java.time.Duration;
 

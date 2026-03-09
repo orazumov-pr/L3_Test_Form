@@ -1,4 +1,4 @@
-package tests;
+package tests.testdata;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
@@ -24,10 +24,14 @@ public class PracticeFormAutotest {
     @Test
     void fillFormTest() {
         open("");
+        executeJavaScript("""
+        document.getElementById('fixedban')?.remove();
+        document.querySelector('footer')?.remove();
+        """);
 
         SelenideElement formsElement = $(byText("Forms"));
         formsElement.shouldBe(visible, Duration.ofSeconds(10));
-        executeJavaScript("arguments[0].click();", formsElement);
+        formsElement.click();
         $$(".router-link").findBy(text("Practice Form")).click();
 
         // Заполнение формы
