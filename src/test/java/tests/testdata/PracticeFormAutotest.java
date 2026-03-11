@@ -49,6 +49,7 @@ public class PracticeFormAutotest {
         $(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
         $("#currentAddress").setValue("Ulitsa Lenina, 5");
+        formsElement.shouldBe(visible, Duration.ofSeconds(10000));
         $("#state").click();
         $(byText("Uttar Pradesh")).click();
         $("#city").click();
