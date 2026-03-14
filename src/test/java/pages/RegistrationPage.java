@@ -16,19 +16,19 @@ public class RegistrationPage {
     CalendarComponent calendar = new CalendarComponent();
 
     //Elements
-    private SelenideElement firstNameInput =  $("#firstName");
-    private SelenideElement lastNameInput =  $("#lastName");
-    private SelenideElement emailInput =  $("#userEmail");
-    private SelenideElement genderContainer =  $("#genterWrapper");
-    private SelenideElement numberInput =  $("#userNumber");
-    private SelenideElement subjectContainer =  $("#subjectsInput");
-    private SelenideElement hobbiesContainer =  $("#hobbiesWrapper");
-    private SelenideElement pictureUpload =  $("#uploadPicture");
-    private SelenideElement addressInput =  $("#currentAddress");
-    private SelenideElement stateCityContainer =  $("#stateCity-wrapper");
-    private SelenideElement setState =  $("#state");
-    private SelenideElement setCity =  $("#city");
-    private SelenideElement submitButton =  $("#submit");
+    private final SelenideElement firstNameInput = $("#firstName");
+    private final SelenideElement lastNameInput = $("#lastName");
+    private final SelenideElement emailInput = $("#userEmail");
+    private final SelenideElement genderContainer = $("#genterWrapper");
+    private final SelenideElement numberInput = $("#userNumber");
+    private final SelenideElement subjectContainer = $("#subjectsInput");
+    private final SelenideElement hobbiesContainer = $("#hobbiesWrapper");
+    private final SelenideElement pictureUpload = $("#uploadPicture");
+    private final SelenideElement addressInput = $("#currentAddress");
+    private final SelenideElement stateCityContainer = $("#stateCity-wrapper");
+    private final SelenideElement setState = $("#state");
+    private final SelenideElement setCity = $("#city");
+    private final SelenideElement submitButton = $("#submit");
 
 
     //Actions
@@ -66,7 +66,7 @@ public class RegistrationPage {
         return this;
     }
 
-   public RegistrationPage typeNumber(String value) {
+    public RegistrationPage typeNumber(String value) {
         numberInput.setValue(value);
 
         return this;

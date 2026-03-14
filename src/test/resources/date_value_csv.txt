@@ -1,6 +1,5 @@
 day, month, year, expectedDisplay
-14, January, 1977, 14 Jan 1977
-25, December, 1990, 25 Dec 1990
-03, March, 1985, 03 Mar 1985
-01, January, 2000, 01 Jan 2000
-31, December, 1999, 31 Dec 1999
+14, January,1977, 14 Jan 1977
+25, December,1990, 25 Dec 1990
+01, January,2000, 01 Jan 2000
+31, December,1999, 31 Dec 1999

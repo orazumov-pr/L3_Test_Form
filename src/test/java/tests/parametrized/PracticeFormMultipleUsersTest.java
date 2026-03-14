@@ -30,9 +30,9 @@ public class PracticeFormMultipleUsersTest {
     void openPracticeForm() {
         open("");
         executeJavaScript("""
-        document.getElementById('fixedban')?.remove();
-        document.querySelector('footer')?.remove();
-        """);
+                document.getElementById('fixedban')?.remove();
+                document.querySelector('footer')?.remove();
+                """);
 
         SelenideElement formsElement = $(byText("Forms"));
         formsElement.shouldBe(visible, Duration.ofSeconds(10));
@@ -40,7 +40,7 @@ public class PracticeFormMultipleUsersTest {
         $$(".router-link").findBy(text("Practice Form")).click();
     }
 
-    @DisplayName("Проверка формы на разных значениях" )
+    @DisplayName("Проверка формы на разных значениях")
     @ParameterizedTest
     @CsvSource({
             "Oleg, Razumov, razumov@mail.ru, Male, 9997776655, 14 January 1977, English, Music, Ulitsa Lenina 5, Uttar Pradesh, Merrut",
